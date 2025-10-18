@@ -3,9 +3,10 @@ import { PropsQuiz } from '@/types/listQuiz';
 interface Props {
   question: PropsQuiz;
   index: number;
+  onClick: () => void;
 }
 
-export function Questions({ question, index }: Props) {
+export function Questions({ question, index, onClick }: Props) {
   return (
     <div className="">
       <div className="p-5 font-bold text-3xl">
@@ -15,7 +16,9 @@ export function Questions({ question, index }: Props) {
         {question.options.map((item, index) => {
           return (
             <div
-              className="bg-indigo-500 p-2 rounded-md text-white mb-6 hover:bg-indigo-300 cursor-pointer"
+              onClick={onClick}
+              className="bg-indigo-300 py-2 px-4 border-1 border-indigo-600 rounded-md
+               text-indigo-950 mb-6 hover:opacity-60 cursor-pointer text-[1.15rem]"
               key={index}
             >
               {item}
