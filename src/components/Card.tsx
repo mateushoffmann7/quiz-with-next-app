@@ -4,15 +4,13 @@ import { useState } from 'react';
 
 export function Card() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const title = 'Quiz de Culinária';
+  const [result, setResult] = useState([]);
 
-  console.log(listQuiz[currentQuestion]);
+  const title = 'Quiz de Culinária';
 
   function loadNextQuestion() {
     if (listQuiz[currentQuestion + 1]) {
-      setTimeout(() => {
-        setCurrentQuestion(currentQuestion + 1);
-      }, 1000);
+      setCurrentQuestion(currentQuestion + 1);
     }
   }
 
@@ -23,7 +21,7 @@ export function Card() {
           {title}
         </div>
         <Questions
-          onClick={() => loadNextQuestion()}
+          onClick={loadNextQuestion}
           question={listQuiz[currentQuestion]}
           index={currentQuestion + 1}
         />
