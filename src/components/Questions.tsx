@@ -29,12 +29,12 @@ export function Questions({ question, index, onClick }: Props) {
         {question.options.map((item, index) => {
           return (
             <div
-              onClick={() => checkQuestion(index)}
               key={index}
+              onClick={() => checkQuestion(index)}
               className={`py-2 px-4 border-1 rounded-md text-indigo-950 mb-6 text-[1.15rem]
                ${
                  answer === null
-                   ? 'hover:opacity-60 cursor-pointer'
+                   ? 'hover:opacity-70 cursor-pointer'
                    : 'cursor-auto'
                }
                 ${
