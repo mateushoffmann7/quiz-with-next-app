@@ -39,10 +39,10 @@ export function Questions({ question, index, onClick }: Props) {
                }
                 ${
                   answer !== null && question.answer === index
-                    ? 'bg-green-300 border-green-700'
+                    ? 'bg-linear-90 to-green-300 from-teal-300 border-green-700'
                     : answer === index
-                    ? 'bg-red-300 border-red-700'
-                    : 'bg-indigo-300 border-b-indigo-600'
+                    ? 'bg-linear-90 to-red-300 from-orange-300 border-red-700'
+                    : 'bg-linear-90 to-indigo-200 from-sky-200'
                 }
                `}
             >
