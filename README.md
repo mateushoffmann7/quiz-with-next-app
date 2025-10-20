@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🍳 Quiz de Culinária
 
-## Getting Started
+Este é um projeto de um simples quiz de culinária desenvolvido com Next.js, TypeScript e Tailwind CSS. O objetivo principal foi praticar e aplicar conceitos fundamentais do React, como gerenciamento de estado, componentização e renderização condicional.
 
-First, run the development server:
+## 📸 Demonstração
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Aqui está uma visão de como o aplicativo funciona:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+| Tela de Pergunta | Tela de Resultado |
+| :---: | :---: |
+| <img width="1136" height="897" alt="image" src="https://github.com/user-attachments/assets/26774974-d02c-4cb6-ba85-57a96caf45c5" />
+| <img width="1033" height="896" alt="image" src="https://github.com/user-attachments/assets/254d2804-fa4d-498d-86b8-7532fc4ce043" />
+|
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+*(**Nota:** Para que as imagens apareçam, faça o upload delas para o seu repositório e substitua as `URL_DA_SUA_IMAGEM...` pelo caminho real, por exemplo: `./demo/quiz.jpg`)*
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Tecnologias Utilizadas
 
-## Learn More
+Este projeto foi construído utilizando as seguintes tecnologias:
 
-To learn more about Next.js, take a look at the following resources:
+* **[Next.js](https://nextjs.org/)**: Framework React para renderização no lado do servidor e geração de sites estáticos.
+* **[React](https://reactjs.org/)**: Biblioteca para construção de interfaces de usuário.
+* **[TypeScript](https://www.typescriptlang.org/)**: Superset do JavaScript que adiciona tipagem estática.
+* **[Tailwind CSS](https://tailwindcss.com/)**: Framework CSS utility-first para estilização rápida e responsiva.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🧠 Conceitos Aplicados
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+O foco deste projeto foi a aplicação prática de conceitos-chave do ecossistema React/TypeScript:
 
-## Deploy on Vercel
+* **Gerenciamento de Estado**: Uso do hook `useState` para controlar a pergunta atual (`currentQuestion`), armazenar as respostas do usuário (`answers`) e alternar para a tela de resultado (`showResult`).
+* **Componentização**: A aplicação foi dividida em componentes reutilizáveis:
+    * `Card`: Componente principal que orquestra o estado e a lógica do quiz.
+    * `Questions`: Componente para exibir a pergunta e as opções.
+    * `Result`: Componente para exibir o resultado final.
+    * `Button`: Componente de botão genérico.
+* **Renderização Condicional**: Utilização de operadores lógicos (`&&`) e condicionais ternárias dentro do TSX para exibir o componente `Questions` ou `Result` com base no estado `showResult`.
+* **Passagem de Props**: Comunicação de dados (ex: `question`) e funções (ex: `onClick={handleAnswered}`) de componentes pais para filhos.
+* **Tipagem com TypeScript**: Aplicação de tipos para `props`, estados (`useState<number[]>`) e dados (ex: `listQuiz`).
+* **Manipulação de Eventos**: Captura de cliques do usuário (`onClick`) para processar respostas e reiniciar o quiz.
+* **Imutabilidade (Operador Spread)**: Uso do operador spread (`...`) na função `handleAnswered` para adicionar uma nova resposta ao array de estado de forma imutável:
+    ```typescript
+    setAnswers([...answers, answer]);
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🚀 Como Executar o Projeto
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Basta acessar meu deploy: https://quiz-with-next-app.vercel.app/
