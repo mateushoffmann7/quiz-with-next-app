@@ -12,9 +12,9 @@ export function Questions({ question, index, onClick }: Props) {
 
   function checkQuestion(index: number) {
     if (answer === null) {
-      setAnswer(index);
       setTimeout(() => {
         setAnswer(null);
+        setAnswer(index);
         onClick(index);
       }, 1000);
     }
@@ -22,7 +22,7 @@ export function Questions({ question, index, onClick }: Props) {
 
   return (
     <div className="">
-      <div className="p-5 font-bold text-3xl">
+      <div className="p-5 font-bold text-1xl sm:text-3xl">
         {index}. {question.question}
       </div>
       <div className="space-y-6 p-5">
@@ -31,7 +31,7 @@ export function Questions({ question, index, onClick }: Props) {
             <div
               key={index}
               onClick={() => checkQuestion(index)}
-              className={`py-2 px-4 border-1 rounded-md text-indigo-950 mb-6 text-[1.15rem]
+              className={`py-2 px-4 border-1 rounded-md text-indigo-950 mb-6 sm:text-[1.15rem] text-[1rem]
                ${
                  answer === null
                    ? 'hover:opacity-70 cursor-pointer'

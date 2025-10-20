@@ -32,8 +32,11 @@ export function Card() {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-linear-90 to-indigo-500 from-sky-500">
-      <div className="bg-linear-90 to-indigo-100 from-sky-100 rounded-md w-full max-w-xl flex flex-col justify-around min-h-[600px] shadow-black shadow-[1px_1px_10px]">
-        <div className="font-bold border-b-2 border-indigo-500 p-5 text-2xl text-center">
+      <div
+        className="flex flex-col justify-around bg-linear-90 to-indigo-100 from-sky-100 rounded-md shadow-black shadow-[1px_1px_10px]
+        sm:w-full sm:max-w-xl sm:min-h-[660px] w-full max-w-[400px] min-h-[500px]"
+      >
+        <div className="font-bold border-b-2 border-indigo-500 p-5 text-1xl sm:text-3xl text-center">
           {title}
         </div>
         {!showResult && (
