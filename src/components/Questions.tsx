@@ -12,9 +12,9 @@ export function Questions({ question, index, onClick }: Props) {
 
   function checkQuestion(index: number) {
     if (answer === null) {
+      setAnswer(index);
       setTimeout(() => {
         setAnswer(null);
-        setAnswer(index);
         onClick(index);
       }, 1000);
     }
@@ -38,7 +38,7 @@ export function Questions({ question, index, onClick }: Props) {
                    : 'cursor-auto'
                }
                 ${
-                  answer !== null && question.answer === index
+                  answer !== null && index === question.answer
                     ? 'bg-linear-90 to-green-300 from-teal-300 border-green-700'
                     : answer === index
                     ? 'bg-linear-90 to-red-300 from-orange-300 border-red-700'

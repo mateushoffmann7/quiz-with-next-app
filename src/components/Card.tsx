@@ -24,7 +24,7 @@ export function Card() {
     loadNextQuestion();
   }
 
-  function restartQuiz() {
+  function handleRestartQuiz() {
     setCurrentQuestion(0);
     setAnswers([]);
     setShowResult(false);
@@ -48,11 +48,13 @@ export function Card() {
         )}
         {showResult && <Result answers={answers} />}
         <div className="p-5 text-center border-t-2 border-indigo-500 flex flex-col items-center gap-2">
-          {showResult && <Button onClick={restartQuiz}>Reiniciar Quiz</Button>}
+          {showResult && (
+            <Button onClick={handleRestartQuiz}>Reiniciar Quiz</Button>
+          )}
           {!showResult && (
-            <div>{`${currentQuestion + 1} de ${
-              listQuiz.length
-            } perguntas`}</div>
+            <div>{`${currentQuestion + 1} de ${listQuiz.length} pergunta${
+              listQuiz.length === 1 ? '' : 's'
+            }`}</div>
           )}
         </div>
       </div>
