@@ -12,8 +12,6 @@ Tela de Pergunta:
 Tela de Resultado:
 <img width="1136" height="897" alt="image" src="https://github.com/user-attachments/assets/26774974-d02c-4cb6-ba85-57a96caf45c5" />
 
-*(**Nota:** Para que as imagens apareçam, faça o upload delas para o seu repositório e substitua as `URL_DA_SUA_IMAGEM...` pelo caminho real, por exemplo: `./demo/quiz.jpg`)*
-
 ## 🛠️ Tecnologias Utilizadas
 
 Este projeto foi construído utilizando as seguintes tecnologias:
